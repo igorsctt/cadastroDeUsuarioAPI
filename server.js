@@ -58,7 +58,7 @@ app.delete('/usuarios/:id', async (req, res) => {
     try {
         await prisma.user.delete({
             where: {
-                id: parseInt(req.params.id, 10) // Converte o id da string para inteiro
+                id: req.params.id // Converte o id da string para inteiro
             }
         });
         res.status(200).json({ message: "Usuário deletado com sucesso" }); // Retorna uma mensagem de sucesso com status 200 (OK)
