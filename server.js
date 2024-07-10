@@ -9,7 +9,6 @@ app.use(cors())
 
 // Rota para obter todos os usuários
 app.get('/usuarios', async (req, res) => {
-    console.log(response.data)
     try {
         const users = await prisma.user.findMany(); // Busca todos os usuários no banco de dados
         res.status(200).json(users); // Retorna a lista de usuários com status 200 (OK)
